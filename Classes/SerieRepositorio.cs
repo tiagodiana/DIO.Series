@@ -9,32 +9,32 @@ namespace DIO.Series.Classes
         private List<Serie> listaSerie = new List<Serie>();
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            listaSerie[id].Excluir();
         }
 
         public Serie GetById(int id)
         {
-            throw new NotImplementedException();
+            return listaSerie[id];
         }
 
-        public void Insert(Serie entidade)
+        public void Insert(Serie objeto)
         {
-            throw new NotImplementedException();
+            listaSerie.Add(objeto);
         }
 
         public List<Serie> List()
         {
-            throw new NotImplementedException();
+            return listaSerie;
         }
 
         public int NextId()
         {
-            throw new NotImplementedException();
+            return listaSerie.Count;
         }
 
-        public void Update(int id, Serie entidade)
+        public void Update(int id, Serie objeto)
         {
-            throw new NotImplementedException();
+            listaSerie[id] = objeto;
         }
     }
 }
