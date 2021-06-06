@@ -1,5 +1,4 @@
 using System;
-using DIO.Series.Enum;
 
 namespace DIO.Series.Classes
 {
@@ -14,9 +13,10 @@ namespace DIO.Series.Classes
         public Serie(int Id, Genero genero, string Titulo, string Descricao, int ano)
         {
             this.Id = Id;
-            this.Genero = Genero;
+            this.Genero = genero;
             this.Titulo = Titulo;
-            this.Ano = Ano;
+            this.Descricao = Descricao;
+            this.Ano = ano;
             this.Excluido = false;
         }
 
@@ -27,12 +27,26 @@ namespace DIO.Series.Classes
             retorno += "Título: " + this.Titulo + Environment.NewLine;
             retorno += "Descrição: " + this.Descricao + Environment.NewLine;
             retorno += "Ano: " + this.Ano + Environment.NewLine;
+            retorno += "Excluido: " + this.Excluido + Environment.NewLine;
             return retorno;
         }
 
         public string retornaTitulo()
         {
             return this.Titulo;
+        }
+
+        public string retornaExcluido()
+        {
+            if (this.Excluido)
+            {
+                return " - Excluido";
+            }
+            else
+            {
+                return "";
+            }
+           
         }
 
         internal int retornaId()
